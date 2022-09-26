@@ -1,0 +1,44 @@
+{% extends 'root.html' %}
+{% block content %}
+
+<section class="content">
+  <div class="row">
+<div class="col-xs-12">
+<div class="box">
+<div class="box-body" style="overflow-x:auto;">
+  <table id="example1" class="table table-bordered">
+      <thead>
+      <th>Id</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Area of Expertise</th>
+      </thead>
+      <tbody>
+    {% for trainer in all_trainers %}
+
+    <tr>
+        <td>{{ trainer.id }}</td>
+      <td><a href="{% url 'trainerProfile' trainer.id %}">{{ trainer.name }}</a></td>
+        <td>{{ trainer.phone }}</td>
+        <td>{{ trainer.email }}</td>
+        <td>{{ trainer.address }}</td>
+        <td>{{ trainer.area_of_expertise}}</td>
+    {% endfor %}
+
+                            </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock content %}
+
+{% block custom_js %}
+
+
+{% endblock custom_js %}
+

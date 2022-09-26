@@ -1,0 +1,52 @@
+{% extends 'root.html' %}
+{% block content %}
+
+<section class="content">
+  <div class="row">
+<div class="col-xs-12">
+<div class="box">
+<div class="box-header with-border">
+  <a href="{% url 'addEquipment' %}" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i
+          class="fa fa-plus"></i> New</a>
+</div>
+<div class="box-body" style="overflow-x:auto;">
+  <table id="example1" class="table table-bordered">
+      <thead>
+          <th>Organization</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Province</th>
+          <th>Email</th>
+          <th>Request For</th>
+          <th> Urgency</th>
+          <th>Status</th>
+      </thead>
+      <tbody>
+    {% for request in requests %}
+
+    <tr>
+     <td> <a href="{% url 'request_update' request.id %}">{{ request.organization }}</a></td>
+      <td>{{ request.name }}</td>
+        <td>{{ request.contact }}</td>
+        <td>{{request.province}}</td>
+        <td>{{request.email}}</td>
+        <td>{{request.request_for}}</td>
+        <td>{{ request.urgency }}</td>
+        <td>{{ request.request_status }}</td>
+    {% endfor %}
+
+                            </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock content %}
+
+{% block custom_js %}
+
+
+{% endblock custom_js %}
+

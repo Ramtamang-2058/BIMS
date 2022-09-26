@@ -1,0 +1,68 @@
+{% extends 'root.html' %}
+{% block content %}
+
+<section class="content">
+  <div class="row">
+      <div class="col-xs-12">
+          <div class="box">
+              <h3> Request Detail</h3>
+              <form method="POST" action="">
+          {% csrf_token %}
+              <div class="box-body" style="overflow-x:auto;">
+                  <table class="table table-bordered">
+                      <thead>
+                      <th>Organization</th>
+                      <th>Name</th>
+                      <th></th>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>Organization</td>
+                          <td>{{ requests.organization }}</td>
+                      </tr>
+                      <tr>
+                          <td>Name</td>
+                          <td>{{ requests.name }}</td>
+                      </tr>
+                      <tr>
+                          <td>Contact</td>
+                          <td>{{ requests.contact }}</td>
+                      </tr>
+                      <tr>
+                          <td>Province</td>
+                          <td>{{ requests.province }}</td>
+                      </tr>
+                      <tr>
+                          <td>Email</td>
+                          <td>{{requests.email}}</td>
+                      </tr>
+                      <tr>
+                          <td>Request For</td>
+                          <td>{{requests.request_for}}</td>
+                      </tr>
+                      <tr>
+                          <td> Urgency </td>
+                          <td>{{ requests.urgency }}</td>
+                      </tr>
+                      <tr>
+                          <td>Request Status</td>
+                          <td>{{ form.as_p }}</td>
+                      </tr>
+                      </tbody>
+
+                  </table>
+                  <input type="submit" style="float:right;" class="btn btn-primary" value="update">
+              </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block custom_js %}
+
+
+{% endblock custom_js %}
+

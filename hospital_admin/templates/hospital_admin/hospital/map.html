@@ -1,0 +1,67 @@
+{% extends 'root.html' %}
+{% block content %}<!DOCTYPE html>
+
+<style>
+.column1 {
+  float: left;
+  width: 20%;
+}
+.column2 {
+  float: right;
+  width: 80%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.avatar {
+  vertical-align: middle;
+  max-width: 50px;
+  width: 50%;
+  max-height: 50px;
+  height: 50%;
+  border-radius: 50%;
+}
+ul{
+    line-height: 1%;
+}
+</style>
+</head>
+<body>
+<div class="row">
+  <form method="get">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{myfilter.form}}
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+    <div class="column1" style="background-color: white">
+      <a href="{% url 'map' %}"><h4 style="text-align: center;">All Trainer</h4></a>
+      <hr>
+        <nav>
+            <ul>
+                    {% for t in trainers %}
+             <a href="{% url 'trainer-location' t.id %}" style="color: black;">
+                <img src="{{t.image}}" alt="Avatar" class="avatar">&nbsp;&nbsp;{{t.name}}
+                            <p style="text-align: center; font-size: 1rem;">{{t.address}}</p>
+                            <hr></a>
+                {% endfor %}
+                </table>
+            </ul>
+        </nav>
+    </div>
+    <div class="column2">
+        <article>
+            {{m|safe}}
+        </article>
+    </div>
+</div>
+</body>
+
+
+{% endblock content %}
+
+{% block custom_js %}
+
+
+{% endblock custom_js %}

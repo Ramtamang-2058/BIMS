@@ -1,0 +1,156 @@
+API documentation:
+
+REQUEST: GET
+PATH: https://backend.motdev.ran.org.np/about/api/get_team_leads/en/
+--> Returns all the team member who are leads and have been approved by admins. (in english)
+
+REQUEST: GET
+PATH: https://backend.motdev.ran.org.np/about/api/get_team_leads/np/
+--> Returns all the team member who are leads and have been approved by admins.(in nepali)
+
+
+REQUEST: GET
+PATH: https://backend.motdev.ran.org.np/about/api/get_team_members/en/
+--> Returns all the team member who are members and have been approved by admins. (in english)
+
+
+REQUEST: GET
+PATH: https://backend.motdev.ran.org.np/about/api/get_team_members/np/
+--> Returns all the team member who are members and have been approved by admins. (in nepali)
+
+
+REQUEST: POST
+PATH: https://backend.motdev.ran.org.np/about/api/post_members/
+--> Post new team members to the database.
+--> Fields:
+    1) province: String
+    2) full_name: String
+    3) position: String
+    4) primary_contact: String
+    5) secondary_contact: String
+    6) qualifications: String
+    7) resume: File
+    8) profile_picture: File
+
+REQUEST: GET
+PATH: https://backend.motdev.ran.org.np/about/api/get_organization/en/
+--> Gets the list of organization (in english)
+
+REQUEST: GET
+PATH: https://backend.motdev.ran.org.np/about/api/get_organization/np/
+--> Gets the list of organization (in nepali)
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/hospital/en/
+--> get list of english hospital data 
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/hospital/np/
+--> get list of nepali hospital data
+
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/equipment/en/
+--> get list of english hospital equipment data
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/equipment/np/
+--> get list of nepali hospital equipment data
+
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/resource/en/
+--> get list of english resource data
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/resource/np/
+--> get list of nepali resource data
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/resource/video/en/
+--> get list of video resource data
+
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/resource/article/en/
+--> get list of article resource data
+
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/resource/news/en/
+--> get list of news resource data
+
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: hhttps://backend.motdev.ran.org.np/about/api/resource/announcement/en/
+--> get list of video announcement data
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/discussion/
+--> get list of question discussion and post
+
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/comment_and_like/
+--> get list of comment and like data
+
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/boardofdirector/en/
+--> get list of community member board of directors
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/technicalteam/en/
+--> get list of community member Technical Team
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/advisorycommittee/en/
+--> get list of community member advisory committee
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/managmentcommittee/en
+--> get list of community member managment committee
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/boardofdirector/np/
+--> get list of community member board of directors
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/technicalteam/np/
+--> get list of community member Technical Team
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/advisorycommittee/np/
+--> get list of community member advisory committee
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/mot/managmentcommittee/np/
+--> get list of community member managment committee
+
+REQUEST: Visitors auto count link
+PATH: https://backend.motdev.ran.org.np/about/api/visitors/1/
+--> get list of community member managment committee
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/request_for_help/
+--> Get all data of request and POST form
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/live_request/oxygen_cylinder/
+--> Get live request of oxygen cylinder
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/live_request/oxygen_ventilator/
+--> Get live request of oxygen ventilator
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/live_request/oxygen_plant/
+--> Get live request for oxygen plant
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/live_request/dialysis_machine/
+--> Get live request for dialysis mahine
+
+REQUEST: GET/POST/PUT/DELETE
+PATH: https://backend.motdev.ran.org.np/about/api/live_request/others/
+--> Get live request of other things

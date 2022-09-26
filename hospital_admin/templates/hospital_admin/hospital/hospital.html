@@ -1,0 +1,41 @@
+{% extends 'root.html' %}
+{% block content %}
+<section class="content">
+  <div class="row">
+<div class="col-xs-12">
+<div class="box">
+<div class="box-body" style="overflow-x:auto;">
+  <table id="example1" class="table table-bordered">
+      <thead>
+          <th>Lastname</th>
+          <th>Firstname</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Action</th>
+      </thead>
+      <tbody>
+    {% for hospital in hospitals %}
+
+    <tr>
+      <td><a href="{% url 'viewHospital' hospital.id %}"> {{ hospital.name }}</a></td>
+        <td>{{ hospital.district }}</td>
+      <td>{{ hospital.contact_number }}</td>
+      <td>{{ hospital.municipality }}</td>
+
+      <td>
+        <a href="{% url 'hospital' hospital.id%}" class='btn btn-success btn-sm btn-flat' ><i class='fa fa-edit'></i> Edit</a>
+        <a href="{% url 'deleteHospital' hospital.id %}" class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+      </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock content %}
+

@@ -1,0 +1,40 @@
+{% extends 'root.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="login-box">
+        <div class="login-logo">
+            <b>BIMS</b>
+        </div>
+
+        <div class="login-box-body">
+            <p class="login-box-msg">Register an account</p>
+    <form action=" " method="POST">
+                {% csrf_token %}
+
+
+                <div class="modal-body">
+
+                    <div class="form-group has-feedback">
+                        {{form.as_p}}
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i
+                                    class="fa fa-sign-in"></i>Update</button>
+                        </div>
+
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+{% endblock content %} </title>
+</head>
+<body>
+
+</body>
+</html>

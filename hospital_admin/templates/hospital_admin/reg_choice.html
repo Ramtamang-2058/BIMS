@@ -1,0 +1,32 @@
+{% extends "hospital_admin/base.html" %}
+{% block content %}
+
+    <div class="login-box">
+        <div class="login-logo">
+            <b>BIMS</b>
+        </div>
+
+        <div class="login-box-body" style="width: 90%;">
+            <p class="login-box-msg">Register an account</p>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a class="btn btn-primary btn-block btn-flat"  href="{% url 'hospital_user' %}"><i
+                                    class="fa fa-h-square"></i> Hospital</a>
+                        </div>
+                        <div class="pull-right col-xs-6">
+                            <a  class="btn btn-primary btn-block btn-flat" href="{% url 'trainer_register' %}"><i class="fas fa-chalkboard-teacher"></i>Trainer</a>
+                        </div>
+                    </div> 
+                </div>
+        </div>
+        </form>
+        </div>
+            </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <a>Register</a>
+        </div>
+    </div>
+{% endblock content %} 

@@ -1,0 +1,40 @@
+{% load static %}
+
+<html>
+{% include 'header.html' %}
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+ {% include "navbar.html" %}
+   
+ {% include "sidebar.html" %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        {{ page_title }}
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">{{ page_title }}</li>
+      </ol>
+    </section>
+  {% block content %}
+    
+  {% endblock content %}
+  </div>
+{% include "footer.html" %}
+{% block modal %}
+  
+{% endblock modal %}
+</div>
+{% include "scripts.html"%}
+{% block custom_js %}
+  
+{% endblock custom_js %}
+</body>
+
+
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<aside class="main-sidebar">
+  <style>
+
+.notification {
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+}
+
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -2px;
+  right: -10px;
+  padding: 0.1px 4px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+} 
+
+  </style>
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="{% static 'images/hospital.png' %}" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>{{ request.user }}</p>
+        <a><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu" data-widget="tree">
+      {% if request.user.role == 1 %}
+  
+      
+      <li class="header">REPORTS</li>
+      <li class=""><a href="{% url 'adminDashboard' %}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li class=""><a href="{% url 'requests' %}"><span class="glyphicon glyphicon-lock"></span> <span>Request</span></a></li>
+      <li class="header">MANAGE</li>
+      <li class=""><a href="{% url 'adminViewHospital' %}"><i class="fa fa-users"></i> <span>Hospital</span></a></li>
+      <li class=""><a href="{% url 'viewEquipments' %}"><i class="fa fa-tasks"></i> <span>Equipments</span></a></li>
+      <li class=""><a href="#"><i class="fa fa-black-tie"></i> <span>Resources</span></a></li>
+      <li class=""><a href="#"></li>
+      <li class="header">SETTINGS</li>
+      <li class="notification"><a href="#"><i class='fa fa-medkit' style="color:#FF917A;"><span class="badge">0</span></i><span>Live Request</span></a></li>
+      <li class=""><a href="#config"><i class="fa fa-cog"></i> <span>Solve</span></a></li>
+            
+      {% endif %}
+        
+      <li class="header">Exit</li>
+      <li class=""><a href="{% url 'account_logout' %}"><i class="fa fa-arrow-left"></i> <span>Logout</span></a></li>
+
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>

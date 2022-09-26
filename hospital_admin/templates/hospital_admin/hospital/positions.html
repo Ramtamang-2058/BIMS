@@ -1,0 +1,73 @@
+{% extends 'root.html' %}
+{% block content %}
+<section class="content">
+  <div class="row">
+<div class="col-xs-12">
+<div class="box">
+<div class="box-header with-border">
+  <a href="{% url 'addEquipment' %}" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i
+          class="fa fa-plus"></i> New</a>
+</div>
+<div class="box-body" style="overflow-x:auto;">
+  <table id="example1" class="table table-bordered">
+      <thead>
+          <th>Equipments Name</th>
+          <th>Unit</th>
+          <th>Hospital</th>
+          <th>Operational</th>
+          <th> Not Operational</th>
+          <th>Total</th>
+          <th>Action</th>
+      </thead>
+      <tbody>
+    {% for equipment in equipments %}
+      
+    <tr>
+      <td><a href="{% url 'viewEquipment' equipment.id %}">{{ equipment.equipment_type}}</a></td>
+      <td>{{ equipment.unit }}</td>
+      <td>{{ equipment.hospital }}</td>
+        <td>{{ equipment.operational}}</td>
+        <td>{{equipment.not_operational}}</td>
+        <td>{{ equipment.total_equipments }}</td>
+      
+      <td>
+        <a href="{% url 'updateEquipment' equipment.id%}" class='btn btn-success btn-sm btn-flat' data-id='{{ position.id }}'><i class='fa fa-edit'></i> Edit</a>
+        <a href="{% url 'deleteEquipment' equipment.id%}" class='btn btn-danger btn-sm btn-flat' data-id='{{ position.id }}'><i class='fa fa-trash'></i> Delete</a>
+      </td>
+    </tr>
+    {% endfor %}      
+
+                            </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock content %}
+
+{% block custom_js %}
+  
+<script>
+  $(function() {
+      $(document).on('click', '.edit', function(e) {
+          e.preventDefault();
+          $('#edit').modal('show');
+          var id = $(this).data('id');
+          getRow(id);
+      });
+
+      $(document).on('click', '.delete', function(e) {
+          e.preventDefault();
+          $('#delete').modal('show');
+          var id = $(this).data('id');
+          getRow(id);
+      });
+
+
+  });
+
+  </script>
+{% endblock custom_js %}
+  
